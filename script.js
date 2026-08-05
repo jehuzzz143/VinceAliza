@@ -516,7 +516,6 @@
   function initRsvpForm() {
     var form = document.getElementById('rsvp-form');
     var submitBtn = document.getElementById('rsvp-submit');
-    var statusEl = document.getElementById('rsvp-status');
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
@@ -535,30 +534,32 @@
         message: data.get('message')
       };
       setLoading(true);
-      setStatus('', '');
 
       fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        // Google Apps Script web apps don't return CORS headers for
-        // normal reads, so the response is opaque; "no-cors" lets the
-        // POST land in the sheet without the browser blocking on a
-        // response body we can't read anyway. A JSON content-type would
-        // trigger a CORS preflight Apps Script can't answer, so the body
-        // is sent as text/plain — Apps Script still reads the raw JSON
-        // fine via e.postData.contents.
-        mode: 'no-cors',
+        // A JSON content-type would trigger a CORS preflight Apps Script
+        // can't answer, so the body is sent as text/plain — Apps Script
+        // still reads the raw JSON fine via e.postData.contents. This is
+        // a "simple request", so (unlike a no-cors call) the response
+        // stays readable — needed to surface the sheet's own duplicate-
+        // email / validation messages back to the guest.
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload)
       })
-        .then(function () {
-          setStatus('success', 'Thank you! Your RSVP has been received.');
-          form.reset();
-          // Give the Sheet a moment to save, then pull the new message
-          // into the wall below so the guest sees their own note appear.
-          setTimeout(refreshWishesWall, 1200);
+        .then(function (res) { return res.json(); })
+        .then(function (result) {
+          if (result && result.success) {
+            showToast('success', result.message || 'Thank you! Your RSVP has been received.');
+            form.reset();
+            // Give the Sheet a moment to save, then pull the new message
+            // into the wall below so the guest sees their own note appear.
+            setTimeout(refreshWishesWall, 1200);
+          } else {
+            showToast('error', (result && result.message) || 'Something went wrong. Please try again.');
+          }
         })
         .catch(function () {
-          setStatus('error', 'Something went wrong. Please try again or reach out to us directly.');
+          showToast('error', 'Something went wrong. Please try again or reach out to us directly.');
         })
         .finally(function () {
           setLoading(false);
@@ -570,11 +571,26 @@
       submitBtn.disabled = isLoading;
     }
 
-    function setStatus(kind, message) {
-      statusEl.textContent = message;
-      statusEl.classList.remove('is-success', 'is-error');
-      if (kind) statusEl.classList.add(kind === 'success' ? 'is-success' : 'is-error');
-    }
+  }
+
+  /* ==================================================================
+     MODULE: TOAST
+     Small floating notification used for RSVP success/error feedback.
+  ================================================================== */
+  var toastTimer = null;
+  function showToast(kind, message) {
+    var toast = document.getElementById('toast');
+    if (!toast) return;
+
+    clearTimeout(toastTimer);
+    toast.textContent = message;
+    toast.classList.remove('toast--success', 'toast--error');
+    toast.classList.add(kind === 'success' ? 'toast--success' : 'toast--error');
+    toast.classList.add('is-visible');
+
+    toastTimer = setTimeout(function () {
+      toast.classList.remove('is-visible');
+    }, 5000);
   }
 
   /* ==================================================================

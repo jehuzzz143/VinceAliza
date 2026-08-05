@@ -1147,15 +1147,32 @@ textarea:focus-visible {
 .rsvp-submit.is-loading .btn-spinner { display: inline-block; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.rsvp-status {
-  margin-top: var(--space-sm);
-  text-align: center;
+/* --------------------------------------------------------------------------
+   17a. TOAST
+-------------------------------------------------------------------------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-lg);
+  z-index: 500;
+  max-width: min(420px, calc(100vw - 2 * var(--space-md)));
+  background: var(--bg-white);
+  color: var(--text-dark);
   font-family: var(--font-nav);
-  font-size: 0.9rem;
-  min-height: 1.4em;
+  font-size: var(--caption);
+  line-height: 1.5;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--dark-olive);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity var(--duration-fast) var(--ease-elegant),
+              transform var(--duration-fast) var(--ease-elegant);
 }
-.rsvp-status.is-success { color: var(--dark-olive); }
-.rsvp-status.is-error { color: #8a3b3b; }
+.toast.is-visible { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.toast.toast--error { border-left-color: #8a3b3b; }
 
 /* --------------------------------------------------------------------------
    17b. WORDS OF LOVE — auto-scrolling marquee of guest RSVP messages

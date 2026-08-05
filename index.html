@@ -32,7 +32,7 @@
        White background, gold botanical mark, couple names,
        thin sage progress bar. Removed from flow once assets
        are ready (see script.js -> initLoader).
-  =========================================================== 
+  =========================================================== -->
   <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
     <div class="loading-inner">
       <svg class="botanical-mark" width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
@@ -55,7 +55,7 @@
       </div>
     </div>
   </div>
--->
+
   <!-- ========================================================== 
        2. INVITATION GATE
        Full-screen envelope / invitation card. Blocks scrolling
@@ -567,8 +567,6 @@
             <span class="btn-label">Send RSVP</span>
             <span class="btn-spinner" aria-hidden="true"></span>
           </button>
-
-          <p class="rsvp-status" id="rsvp-status" role="status" aria-live="polite"></p>
         </form>
       </div>
 
@@ -611,6 +609,11 @@
     <p class="footer-signature">Made with Love</p>
     <p class="footer-names">Vince <span class="amp">&amp;</span> Aliza</p>
   </footer>
+
+  <!-- ==========================================================
+       TOAST — floating success/error feedback for the RSVP form
+  =========================================================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="script.js"></script>
 </body>
