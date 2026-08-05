@@ -163,12 +163,12 @@ textarea:focus-visible {
 }
 
 .section-subtitle {
-  text-wrap-style: pretty;
+  text-align: center;
 
   font-size: var(--section-subtitle);
   font-weight: 400;
   color: var(--color-text-soft);
-  max-width: 42ch;
+  max-width: 60ch;
   margin: 0 auto var(--space-lg);
 }
 
@@ -256,7 +256,7 @@ textarea:focus-visible {
   position: fixed;
   inset: 0;
   z-index: 300;
-  background: var(--bg-white);
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -406,16 +406,18 @@ textarea:focus-visible {
 
 .card-eyebrow {
   font-family: var(--font-nav);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--olive);
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 .card-line {
   font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--color-text-soft);
+  font-weight: 600;
 }
 .card-names {
   display: flex;
@@ -423,6 +425,7 @@ textarea:focus-visible {
   justify-content: center;
   gap: 0.6rem;
   margin: 1.1rem 0;
+  font-weight: 700;
 }
 .card-name {
   font-family: var(--font-heading);
