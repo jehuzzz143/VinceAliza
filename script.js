@@ -19,10 +19,12 @@
      Google Apps Script Web App deployment shared by:
        - initRsvpForm()  -> POSTs new RSVPs into the Sheet
        - initWishesWall() -> GETs existing rows back out to display
-     For the wall to work, the Apps Script must implement doGet(e)
-     returning a JSON array of { name, attendance, message } objects.
-     See assets/google-apps-script.gs.txt for a ready-to-paste script
-     (both doPost and doGet) matching this form's five fields.
+     doPost(e) expects a JSON body (e.postData.contents) with keys
+     fullname/email/guests/attendance/message — sent as text/plain to
+     dodge the CORS preflight Apps Script can't answer. doGet(e) must
+     return a JSON array of objects; this deployment's version only
+     includes { fullname, message }, so the wishes wall shows each
+     guest's name and note but not their attendance status.
   -------------------------------------------------------------- */
   var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzoNtsJwFTZv7K9qYKFnS4zIB3Xh_fwaI3-2FtLuskZCuHhQ2Tj-OpHeESfvJmxSdAU/exec';
 
@@ -387,6 +389,35 @@
   }
 
   /* ==================================================================
+     MODULE: QUOTE PARALLAX
+     The love-quote background photo drifts at a slower rate than the
+     page scroll, giving the full-bleed section a sense of depth.
+  ================================================================== */
+  function initQuoteParallax() {
+    if (PREFERS_REDUCED_MOTION) return;
+    var section = document.querySelector('.quote-section');
+    var img = section && section.querySelector('.quote-bg img');
+    if (!section || !img) return;
+
+    var ticking = false;
+    function update() {
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // 0 when the section is centered in the viewport; negative above, positive below.
+      var progress = (rect.top + rect.height / 2 - vh / 2) / (vh + rect.height);
+      img.style.transform = 'translate3d(0,' + (progress * -50) + 'px,0)';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+  }
+
+  /* ==================================================================
      MODULE: GALLERY LIGHTBOX
      Click/keyboard/swipe capable lightbox shared by every gallery item.
   ================================================================== */
@@ -493,6 +524,16 @@
       if (!form.reportValidity()) return;
 
       var data = new FormData(form);
+      // Keys match the Apps Script doPost(e) contract exactly (it reads
+      // data.fullname, not data.name) — a mismatch here silently drops
+      // every submission since the sheet's required-field check fails.
+      var payload = {
+        fullname: data.get('name'),
+        email: data.get('email'),
+        guests: data.get('guests'),
+        attendance: data.get('attendance'),
+        message: data.get('message')
+      };
       setLoading(true);
       setStatus('', '');
 
@@ -501,9 +542,13 @@
         // Google Apps Script web apps don't return CORS headers for
         // normal reads, so the response is opaque; "no-cors" lets the
         // POST land in the sheet without the browser blocking on a
-        // response body we can't read anyway.
+        // response body we can't read anyway. A JSON content-type would
+        // trigger a CORS preflight Apps Script can't answer, so the body
+        // is sent as text/plain — Apps Script still reads the raw JSON
+        // fine via e.postData.contents.
         mode: 'no-cors',
-        body: data
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
       })
         .then(function () {
           setStatus('success', 'Thank you! Your RSVP has been received.');
@@ -561,7 +606,7 @@
         .filter(function (r) { return r && r.message && String(r.message).trim(); })
         .map(function (r) {
           return {
-            name: String(r.name || 'A Guest').trim(),
+            name: String(r.fullname || 'A Guest').trim(),
             attendance: String(r.attendance || '').trim(),
             message: String(r.message).trim()
           };
@@ -631,6 +676,7 @@
     initScrollReveal();
     initAmbientParticles();
     initParallax();
+    initQuoteParallax();
     initLightbox();
     initRipple();
     initRsvpForm();

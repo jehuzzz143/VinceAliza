@@ -8,20 +8,19 @@
 
   <!-- ==========================================================
        GOOGLE FONTS
-       Playfair Display  -> Headings
-       Cormorant Garamond -> Body copy
-       Poppins            -> Navigation / UI labels
-       Great Vibes        -> Script / signature accents
+       Cormorant Garamond -> Headings & body copy
+       Manrope            -> Navigation / UI labels
+       Allura             -> Script / signature accents
   =========================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%83%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+ 
   <!-- ==========================================================
        SKIP LINK — accessibility: keyboard users can bypass the
        decorative loading/invitation layers straight to content.
@@ -33,11 +32,11 @@
        White background, gold botanical mark, couple names,
        thin sage progress bar. Removed from flow once assets
        are ready (see script.js -> initLoader).
-  =========================================================== -->
+  =========================================================== 
   <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
     <div class="loading-inner">
       <svg class="botanical-mark" width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-        <g stroke="#C8A96A" stroke-width="1.4" stroke-linecap="round" fill="none">
+        <g stroke="#9E8A5E" stroke-width="1.4" stroke-linecap="round" fill="none">
           <path d="M60 108 C 60 80, 58 60, 60 12" />
           <path d="M60 30 C 44 26, 34 14, 30 6" />
           <path d="M60 30 C 76 26, 86 14, 90 6" />
@@ -56,8 +55,8 @@
       </div>
     </div>
   </div>
-
-  <!-- ==========================================================
+-->
+  <!-- ========================================================== 
        2. INVITATION GATE
        Full-screen envelope / invitation card. Blocks scrolling
        of the homepage until the guest taps to open it.
@@ -77,8 +76,8 @@
 
         <button class="invitation-card" id="invitation-card" type="button" aria-label="Tap to open your wedding invitation">
           <span class="card-gold-border" aria-hidden="true"></span>
-          <svg class="card-corner card-corner--tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 40 C 2 18, 18 2, 40 2" stroke="#C8A96A" stroke-width="1.2" fill="none"/></svg>
-          <svg class="card-corner card-corner--br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 20 C 58 42, 42 58, 20 58" stroke="#C8A96A" stroke-width="1.2" fill="none"/></svg>
+          <svg class="card-corner card-corner--tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 40 C 2 18, 18 2, 40 2" stroke="#9E8A5E" stroke-width="1.2" fill="none"/></svg>
+          <svg class="card-corner card-corner--br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 20 C 58 42, 42 58, 20 58" stroke="#9E8A5E" stroke-width="1.2" fill="none"/></svg>
 
           <p class="card-eyebrow">Together with our Families</p>
           <p class="card-line">request the honour of your presence</p>
@@ -170,25 +169,8 @@
           <span class="hero-name">Aliza</span>
         </h1>
         <p class="hero-date">November 14, 2026 &middot; Tagaytay, Philippines</p>
-      </div>
 
-      <a href="#countdown" class="scroll-down" aria-label="Scroll down to continue">
-        <span>Scroll Down</span>
-        <svg class="scroll-arrow" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </section>
-
-    <!-- ========================================================
-         COUNTDOWN
-    ========================================================= -->
-    <section id="countdown" class="countdown-section" aria-label="Countdown to the wedding">
-      <div class="section-inner">
-        <p class="eyebrow reveal" data-reveal="up">The Big Day</p>
-        <h2 class="section-title reveal" data-reveal="up">Counting Down To Forever</h2>
-
-        <div class="countdown-grid reveal" data-reveal="scale" role="timer" aria-live="off">
+        <div class="countdown-grid hero-countdown reveal" data-reveal="scale" role="timer" aria-live="off" aria-label="Countdown to the wedding">
           <div class="count-card">
             <span class="count-number" id="count-days" data-target="0">00</span>
             <span class="count-label">Days</span>
@@ -207,62 +189,133 @@
           </div>
         </div>
       </div>
+
+      <a href="#story" class="scroll-down" aria-label="Scroll down to continue">
+        <span>Scroll Down</span>
+        <svg class="scroll-arrow" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </section>
 
     <!-- ========================================================
          OUR STORY — vertical / alternating timeline
     ========================================================= -->
     <section id="story" class="story-section" aria-label="Our story">
+      <svg class="story-corner story-corner--tl" viewBox="0 0 120 120" aria-hidden="true"><path d="M4 92 C 4 42, 42 4, 92 4" stroke="#9E8A5E" stroke-width="1" fill="none"/></svg>
+      <svg class="story-corner story-corner--br" viewBox="0 0 120 120" aria-hidden="true"><path d="M116 28 C 116 78, 78 116, 28 116" stroke="#9E8A5E" stroke-width="1" fill="none"/></svg>
+
       <div class="section-inner">
         <p class="eyebrow reveal" data-reveal="up">Since The Beginning</p>
         <h2 class="section-title reveal" data-reveal="up">Our Story</h2>
+        <p class="section-subtitle reveal" data-reveal="up">Every chapter, a moment we'll cherish forever.</p>
 
         <ol class="timeline">
           <li class="timeline-item reveal" data-reveal="left">
             <div class="timeline-card">
-              <span class="timeline-year">2019</span>
-              <p class="timeline-text">We met.</p>
+              <figure class="timeline-photo">
+                <span class="timeline-tape" aria-hidden="true"></span>
+                <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391?auto=format&fit=crop&w=500&q=75" alt="A charming café-lined street where Vince and Aliza first crossed paths" loading="lazy">
+              </figure>
+              <div class="timeline-content">
+                <span class="timeline-year">2019
+                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
+                </span>
+                <p class="timeline-script">We met.</p>
+                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> University Library</p>
+                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
+                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                </p>
+              </div>
             </div>
           </li>
+
           <li class="timeline-item reveal" data-reveal="right">
             <div class="timeline-card">
-              <span class="timeline-year">2020</span>
-              <p class="timeline-text">Coffee became dinner.</p>
+              <figure class="timeline-photo">
+                <span class="timeline-tape" aria-hidden="true"></span>
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=75" alt="Latte art in a coffee cup, marking the start of long café conversations" loading="lazy">
+              </figure>
+              <div class="timeline-content">
+                <span class="timeline-year">2020
+                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
+                </span>
+                <p class="timeline-script">Coffee became dinner.</p>
+                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Our favorite café</p>
+                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
+                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                </p>
+              </div>
             </div>
           </li>
+
           <li class="timeline-item reveal" data-reveal="left">
             <div class="timeline-card">
-              <span class="timeline-year">2021</span>
-              <p class="timeline-text">Road trips.</p>
+              <figure class="timeline-photo">
+                <span class="timeline-tape" aria-hidden="true"></span>
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=500&q=75" alt="A lone traveler overlooking a misty mountain valley on a road trip" loading="lazy">
+              </figure>
+              <div class="timeline-content">
+                <span class="timeline-year">2021
+                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
+                </span>
+                <p class="timeline-script">Road trips.</p>
+                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Tagaytay &middot; Batangas &middot; La Union</p>
+                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
+                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                </p>
+              </div>
             </div>
           </li>
+
           <li class="timeline-item reveal" data-reveal="right">
             <div class="timeline-card">
-              <span class="timeline-year">2022</span>
-              <p class="timeline-text">First home.</p>
+              <figure class="timeline-photo">
+                <span class="timeline-tape" aria-hidden="true"></span>
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=75" alt="A cozy modern home surrounded by trees at dusk" loading="lazy">
+              </figure>
+              <div class="timeline-content">
+                <span class="timeline-year">2022
+                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
+                </span>
+                <p class="timeline-script">First home.</p>
+                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Our little safe place</p>
+                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
+                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                </p> 
+              </div>
             </div>
           </li>
+
           <li class="timeline-item reveal" data-reveal="left">
             <div class="timeline-card">
-              <span class="timeline-year">2024</span>
-              <p class="timeline-text">She said yes.</p>
-            </div>
-          </li>
-          <li class="timeline-item reveal" data-reveal="right">
-            <div class="timeline-card timeline-card--final">
-              <span class="timeline-year">2026</span>
-              <p class="timeline-text">Forever begins.</p>
+              <figure class="timeline-photo">
+                <span class="timeline-tape" aria-hidden="true"></span>
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=500&q=75" alt="A candlelit table set for a romantic evening under the stars" loading="lazy">
+              </figure>
+              <div class="timeline-content">
+                <span class="timeline-year">2024
+                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
+                </span>
+                <p class="timeline-script">She said yes.</p>
+                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Under the stars</p>
+                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
+                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                </p>  
+              </div>
             </div>
           </li>
         </ol>
+
+        <p class="timeline-closing reveal" data-reveal="up">&ldquo;It's not just the big moments,<br>it's every little thing in between.<br>That's our favorite part.&rdquo;</p>
       </div>
     </section>
 
     <!-- ========================================================
          LOVE QUOTE
     ========================================================= -->
-    <section class="quote-section" aria-label="A word about our love">
-      <div class="quote-bg" aria-hidden="true">
+    <section class="quote-section " aria-label="A word about our love">
+      <div class="quote-bg  " aria-hidden="true">
         <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1600&q=70" alt="" loading="lazy">
         <div class="quote-overlay"></div>
       </div>
@@ -376,51 +429,29 @@
       <div class="section-inner">
         <p class="eyebrow reveal" data-reveal="up">What To Wear</p>
         <h2 class="section-title reveal" data-reveal="up">Dress Code</h2>
-        <p class="section-subtitle reveal" data-reveal="up">Formal Attire</p>
 
-        <div class="dress-grid">
-          <div class="dress-card reveal" data-reveal="left">
-            <svg class="dress-icon" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M9 2 L9 6 L5 10 L4 22 L20 22 L19 10 L15 6 L15 2" stroke="#C8A96A" stroke-width="1.3" fill="none" stroke-linejoin="round"/><path d="M9 2 Q12 5 15 2" stroke="#C8A96A" stroke-width="1.3" fill="none"/></svg>
-            <h3>Women</h3>
-            <p>Elegant Long Gown</p>
-          </div>
-          <div class="dress-card reveal" data-reveal="right">
-            <svg class="dress-icon" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8 3 L4 6 L6 9 L8 7.5 L8 21 L16 21 L16 7.5 L18 9 L20 6 L16 3 L14 5 L10 5 Z" stroke="#C8A96A" stroke-width="1.3" fill="none" stroke-linejoin="round"/></svg>
-            <h3>Men</h3>
-            <p>Formal Suit or Barong</p>
-          </div>
-        </div>
+        <figure class="dress-showcase reveal" data-reveal="up">
+          <img src="assets/dresscode.png" alt="Sample formal attire: women in long gowns and men in barong tagalog, in champagne and beige tones">
+          <figcaption class="dress-labels">
+            <span class="dress-label">
+              <svg class="dress-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 2 L9 6 L5 10 L4 22 L20 22 L19 10 L15 6 L15 2" stroke="#9E8A5E" stroke-width="1.3" fill="none" stroke-linejoin="round"/><path d="M9 2 Q12 5 15 2" stroke="#9E8A5E" stroke-width="1.3" fill="none"/></svg>
+              Women &mdash; Long Gown
+            </span>
+            <span class="dress-label">
+              <svg class="dress-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 3 L4 6 L6 9 L8 7.5 L8 21 L16 21 L16 7.5 L18 9 L20 6 L16 3 L14 5 L10 5 Z" stroke="#9E8A5E" stroke-width="1.3" fill="none" stroke-linejoin="round"/></svg>
+              Men &mdash; Formal Barong
+            </span>
+          </figcaption>
+        </figure>
 
         <div class="palette-block reveal" data-reveal="up">
-          <h3 class="palette-heading palette-heading--good">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#556B2F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Please Wear
-          </h3>
           <ul class="swatch-row">
-            <li><span class="swatch" style="--sw:#87986A"></span>Sage Green</li>
-            <li><span class="swatch" style="--sw:#6B7752"></span>Olive</li>
             <li><span class="swatch" style="--sw:#E8DDC8"></span>Champagne</li>
             <li><span class="swatch" style="--sw:#D8CBB8"></span>Beige</li>
-            <li><span class="swatch" style="--sw:#B8AFA0"></span>Stone</li>
             <li><span class="swatch" style="--sw:#F3F0EA"></span>Cream</li>
             <li><span class="swatch" style="--sw:#9C8C74"></span>Taupe</li>
             <li><span class="swatch" style="--sw:#BFB08A"></span>Khaki</li>
             <li><span class="swatch" style="--sw:#E4D2AE"></span>Sand</li>
-            <li><span class="swatch" style="--sw:#7B5B44"></span>Warm Brown</li>
-          </ul>
-        </div>
-
-        <div class="palette-block palette-block--avoid reveal" data-reveal="up">
-          <h3 class="palette-heading palette-heading--bad">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#8a3b3b" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            Please Avoid
-          </h3>
-          <ul class="swatch-row">
-            <li><span class="swatch" style="--sw:#D1272B"></span>Bright Red</li>
-            <li><span class="swatch" style="--sw:#39FF14"></span>Neon</li>
-            <li><span class="swatch" style="--sw:#FF3EA5"></span>Hot Pink</li>
-            <li><span class="swatch" style="--sw:#FF6A00"></span>Bright Orange</li>
-            <li><span class="swatch" style="--sw:#111111"></span>Pure Black <em>(optional)</em></li>
           </ul>
         </div>
       </div>
@@ -437,29 +468,29 @@
         <div class="venue-grid">
           <article class="venue-card reveal" data-reveal="left">
             <div class="venue-card-img">
-              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=75" alt="Two chairs decorated with white and peach flowers overlooking a lake" loading="lazy">
+              <img src="assets/sacredheart.jpg" alt="Two chairs decorated with white and peach flowers overlooking a lake" loading="lazy">
             </div>
             <div class="venue-card-body">
               <h3>Ceremony</h3>
               <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 2v3M17 2v3M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> November 14, 2026</p>
-              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#87986A" stroke-width="1.4" fill="none"/><path d="M12 7v5l3 2" stroke="#87986A" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg> 3:30 PM</p>
-              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Lake Hills Garden Estate</p>
-              <p class="venue-address">1 Ridgeview Road, Tagaytay, Philippines</p>
-              <a class="btn btn-outline" href="https://maps.google.com/?q=Lake+Hills+Garden+Estate+Tagaytay" target="_blank" rel="noopener">Open in Google Maps</a>
+              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#87986A" stroke-width="1.4" fill="none"/><path d="M12 7v5l3 2" stroke="#87986A" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg> 2:00 PM</p>
+              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Diocesan Shrine and Parish of the Sacred Heart, Binangonan</p>
+              <p class="venue-address">Tayuman, Binangonan, Rizal</p>
+              <a class="btn btn-outline" href="https://maps.app.goo.gl/SPEkpt8TRbs6qB3h7" target="_blank" rel="noopener">Open in Google Maps</a>
             </div>
           </article>
 
           <article class="venue-card reveal" data-reveal="right">
             <div class="venue-card-img">
-              <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=75" alt="Elegant reception ballroom set with round tables and chandeliers" loading="lazy">
+              <img src="assets/cervo.jpg" alt="Elegant reception ballroom set with round tables and chandeliers" loading="lazy">
             </div>
             <div class="venue-card-body">
               <h3>Reception</h3>
               <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 2v3M17 2v3M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> November 14, 2026</p>
-              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#87986A" stroke-width="1.4" fill="none"/><path d="M12 7v5l3 2" stroke="#87986A" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg> 6:00 PM</p>
-              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> The Grand Pavilion Hall</p>
-              <p class="venue-address">1 Ridgeview Road, Tagaytay, Philippines</p>
-              <a class="btn btn-outline" href="https://maps.google.com/?q=The+Grand+Pavilion+Hall+Tagaytay" target="_blank" rel="noopener">Open in Google Maps</a>
+              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#87986A" stroke-width="1.4" fill="none"/><path d="M12 7v5l3 2" stroke="#87986A" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg> 5:00 PM</p>
+              <p class="venue-row"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Cervo's Event Place, Binangonan</p>
+              <p class="venue-address">Binangonan, Rizal</p>
+              <a class="btn btn-outline" href="https://maps.app.goo.gl/Y27vC231pJQnDe3f8" target="_blank" rel="noopener">Open in Google Maps</a>
             </div>
           </article>
         </div>
@@ -470,7 +501,33 @@
          RSVP
     ========================================================= -->
     <section id="rsvp" class="rsvp-section" aria-label="RSVP form">
-      <div class="section-inner section-inner--narrow">
+      <svg class="rsvp-branch rsvp-branch--tl" viewBox="0 0 120 120" aria-hidden="true">
+        <g stroke="#87986A" stroke-width="1.4" stroke-linecap="round" fill="none">
+          <path d="M60 108 C 60 80, 58 60, 60 12" />
+          <path d="M60 30 C 44 26, 34 14, 30 6" />
+          <path d="M60 30 C 76 26, 86 14, 90 6" />
+          <path d="M60 50 C 42 48, 30 38, 24 30" />
+          <path d="M60 50 C 78 48, 90 38, 96 30" />
+          <path d="M60 70 C 44 70, 34 62, 28 56" />
+          <path d="M60 70 C 76 70, 86 62, 92 56" />
+          <path d="M60 90 C 48 92, 40 88, 35 82" />
+          <path d="M60 90 C 72 92, 80 88, 85 82" />
+        </g>
+      </svg>
+      <svg class="rsvp-branch rsvp-branch--br" viewBox="0 0 120 120" aria-hidden="true">
+        <g stroke="#87986A" stroke-width="1.4" stroke-linecap="round" fill="none">
+          <path d="M60 108 C 60 80, 58 60, 60 12" />
+          <path d="M60 30 C 44 26, 34 14, 30 6" />
+          <path d="M60 30 C 76 26, 86 14, 90 6" />
+          <path d="M60 50 C 42 48, 30 38, 24 30" />
+          <path d="M60 50 C 78 48, 90 38, 96 30" />
+          <path d="M60 70 C 44 70, 34 62, 28 56" />
+          <path d="M60 70 C 76 70, 86 62, 92 56" />
+          <path d="M60 90 C 48 92, 40 88, 35 82" />
+          <path d="M60 90 C 72 92, 80 88, 85 82" />
+        </g>
+      </svg>
+      <div class="section-inner section-inner--narrow padding-bottom-20">
         <p class="eyebrow reveal" data-reveal="up">Kindly Reply</p>
         <h2 class="section-title reveal" data-reveal="up">RSVP</h2>
         <p class="section-subtitle reveal" data-reveal="up">Please respond by October 1, 2026.</p>
@@ -539,7 +596,7 @@
   =========================================================== -->
   <footer class="site-footer">
     <svg class="footer-botanical" viewBox="0 0 300 80" aria-hidden="true">
-      <g stroke="#C8A96A" stroke-width="1" fill="none" stroke-linecap="round">
+      <g stroke="#9E8A5E" stroke-width="1" fill="none" stroke-linecap="round">
         <path d="M150 78 C150 60 150 40 150 10"/>
         <path d="M150 20 C130 16 115 6 105 0"/>
         <path d="M150 20 C170 16 185 6 195 0"/>
