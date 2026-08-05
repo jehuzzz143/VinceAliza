@@ -1,0 +1,72 @@
+/**
+ * Google Apps Script backing the RSVP form + "Words of Love" wall
+ * on the Vince & Aliza wedding site.
+ *
+ * SETUP
+ * 1. Create a Google Sheet. Give the first row these exact headers:
+ *      Timestamp | Name | Email | Guests | Attendance | Message
+ * 2. In the Sheet: Extensions -> Apps Script.
+ * 3. Delete the default code and paste this whole file in its place.
+ * 4. Deploy -> New deployment -> select type "Web app".
+ *      Execute as: Me
+ *      Who has access: Anyone
+ * 5. Copy the resulting /exec URL and put it in GOOGLE_SCRIPT_URL near
+ *    the top of script.js (already done if you gave Claude the URL).
+ *
+ * If you ever redeploy, use "Manage deployments" -> edit -> new version
+ * so the URL stays the same; a brand new deployment gets a new URL.
+ */
+
+function getSheet_() {
+  return SpreadsheetApp.getActiveSpreadsheet().getSheetByName('RSVPs') ||
+         SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+}
+
+/**
+ * Handles the RSVP form's POST (fetch mode: 'no-cors', so this
+ * function's return value is never read by the browser — it only
+ * needs to save the row).
+ */
+function doPost(e) {
+  var sheet = getSheet_();
+  var p = e.parameter;
+
+  sheet.appendRow([
+    new Date(),
+    p.name || '',
+    p.email || '',
+    p.guests || '',
+    p.attendance || '',
+    p.message || ''
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * Handles the "Words of Love" wall's GET request. Returns every
+ * response as JSON so script.js can render them as scrolling cards.
+ * Only rows with a non-empty Message end up visible on the wall
+ * (filtering happens in script.js, but you could also do it here).
+ */
+function doGet(e) {
+  var sheet = getSheet_();
+  var values = sheet.getDataRange().getValues();
+  var rows = values.slice(1); // skip the header row
+
+  var wishes = rows.map(function (row) {
+    return {
+      name: row[1],
+      email: row[2],
+      guests: row[3],
+      attendance: row[4],
+      message: row[5]
+    };
+  });
+
+  return ContentService
+    .createTextOutput(JSON.stringify(wishes))
+    .setMimeType(ContentService.MimeType.JSON);
+}

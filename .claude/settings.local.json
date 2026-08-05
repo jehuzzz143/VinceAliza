@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sf http://localhost:8123/index.html)",
+      "Bash(break)",
+      "Bash(chromium-cli --help)",
+      "Bash(node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-jehu-Project-Aliza-Vince/50b9a58d-1e33-4e98-8fb0-0c9ef6cbe7c6/scratchpad/pw)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npx playwright *)",
+      "Bash(node drive.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1600&q=80\")",
+      "Bash(lsof -ti:8123 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(node drive-rsvp.js)"
+    ]
+  }
+}
