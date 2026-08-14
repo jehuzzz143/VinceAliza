@@ -489,6 +489,31 @@
   }
 
   /* ==================================================================
+     MODULE: FAQ ACCORDION
+     Only one question stays open at a time; the CSS grid-template-rows
+     trick on .faq-answer handles the smooth expand/collapse animation.
+  ================================================================== */
+  function initFaq() {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
+    if (!items.length) return;
+
+    items.forEach(function (item) {
+      var btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', function () {
+        var isOpen = item.classList.contains('is-open');
+        items.forEach(function (other) {
+          other.classList.remove('is-open');
+          other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  /* ==================================================================
      MODULE: BUTTON RIPPLE
      Adds a Material-esque ripple to any .btn on click/tap.
   ================================================================== */
@@ -529,7 +554,8 @@
       var payload = {
         fullname: data.get('name'),
         email: data.get('email'),
-        guests: data.get('guests'),
+        // No guest-count field in the form anymore — every RSVP is for one.
+        guests: '1',
         attendance: data.get('attendance'),
         message: data.get('message')
       };
@@ -694,6 +720,7 @@
     initParallax();
     initQuoteParallax();
     initLightbox();
+    initFaq();
     initRipple();
     initRsvpForm();
     initWishesWall();

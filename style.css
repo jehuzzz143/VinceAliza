@@ -25,7 +25,7 @@ a { color: inherit; text-decoration: none; }
 :root {
   /* -- Palette (from the brief, do not stray from these) -- */
   --sage: #87986A;
-  --olive: #A9A095;
+  --olive: #6F665A; /* darkened from #A9A095 — that value read ~2.6:1 against white, well under WCAG AA's 4.5:1 for text this size */
   --dark-olive: #556B2F;
   --champagne: #E8DDC8;
   --dusty-beige: #D8CBB8;
@@ -95,7 +95,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--body);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.9;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -166,7 +166,7 @@ textarea:focus-visible {
   text-align: center;
 
   font-size: var(--section-subtitle);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-text-soft);
   max-width: 60ch;
   margin: 0 auto var(--space-lg);
@@ -176,7 +176,8 @@ textarea:focus-visible {
 .story-section { background: var(--bg-white); }
 .gallery-section { background: var(--ivory); }
 .dress-section { background: var(--cream); }
-.venue-section { background: var(--bg-white); }
+.venue-section { background: var(--champagne); }
+.faq-section { background: var(--bg-white); }
 .rsvp-section {
   position: relative;
   overflow: hidden;
@@ -688,7 +689,7 @@ textarea:focus-visible {
 .hero-date {
   margin-top: var(--space-sm);
   font-size: var(--hero-subtitle);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--cream);
 }
@@ -1038,6 +1039,16 @@ textarea:focus-visible {
 }
 
 .palette-block { max-width: 900px; margin: 0 auto var(--space-lg); }
+.palette-title {
+  text-align: center;
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: var(--eyebrow);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
 
 .swatch-row {
   display: flex;
@@ -1098,15 +1109,51 @@ textarea:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
+   16b. FAQ
+-------------------------------------------------------------------------- */
+.faq-list { margin-top: var(--space-lg); }
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+.faq-item:first-child { border-top: 1px solid var(--color-border); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 1.3rem 0;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  transition: transform var(--duration-fast) var(--ease-elegant);
+}
+.faq-item.is-open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-med) var(--ease-elegant);
+}
+.faq-answer-inner { overflow: hidden; }
+.faq-item.is-open .faq-answer { grid-template-rows: 1fr; }
+.faq-answer p {
+  color: var(--color-text-soft);
+  font-size: var(--body);
+  line-height: 1.7;
+  padding-bottom: 1.3rem;
+  max-width: 60ch;
+}
+
+/* --------------------------------------------------------------------------
    17. RSVP FORM
 -------------------------------------------------------------------------- */
 .rsvp-form { margin-top: var(--space-lg); }
 .form-row { margin-bottom: var(--space-sm); display: flex; flex-direction: column; gap: 0.4rem; }
-.form-row-group {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
-}
 .form-row label {
   font-family: var(--font-nav);
   font-size: 0.78rem;
@@ -1354,7 +1401,6 @@ textarea:focus-visible {
   .countdown-grid { grid-template-columns: repeat(4, 1fr); }
   .gallery-grid { columns: 2; }
   .venue-grid { grid-template-columns: 1fr 1fr; }
-  .form-row-group { grid-template-columns: 1fr 1fr; }
 
   /* Timeline alternates left/right from tablet up */
   .timeline { max-width: 100%; padding-left: 0; }
