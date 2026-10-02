@@ -1517,6 +1517,58 @@ textarea:focus-visible {
   color:var(--autumn-rust); opacity:.85;
 }
 
+
+.sponsor-palettes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.palette-block {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(107, 119, 82, 0.15);
+}
+
+.palette-title {
+  
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.swatch-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.swatch-row li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.swatch {
+  width: 55px;
+  height: 55px;
+  display: block;
+  border-radius: 50%;
+  background: var(--sw);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+
 @media (max-width: 768px) {
   .countdown-grid{
     grid-template-columns: repeat(4, 1fr);
