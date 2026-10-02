@@ -655,7 +655,7 @@ textarea:focus-visible {
 .hero-bg img {
   width: 100%; height: 100%;
   object-fit: cover;
-  animation: hero-zoom 22s ease-in-out infinite alternate;
+ 
 }
 @keyframes hero-zoom {
   from { transform: scale(1); }
@@ -1590,4 +1590,21 @@ textarea:focus-visible {
   .quote-content cite{
     margin-top:80px;
   }
+  .hero{
+      background: linear-gradient(to bottom, rgb(0 0 0 / 91%) 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+  .hero-bg img{
+    transform: scale(2);
+    object-fit:contain;
+  }
+  .hero-content{
+    margin-top:-80px;
+  }
+  .hero-date{
+    margin-top: 150px;
+  }
+  .hero-countdown{
+        margin-top: var(--space-xs);
+  }
 }
+
