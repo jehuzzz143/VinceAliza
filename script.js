@@ -543,8 +543,16 @@
     var submitBtn = document.getElementById('rsvp-submit');
     if (!form) return;
 
+    var rsvpDeadline = new Date('2026-10-17T23:59:59+08:00');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Check RSVP deadline
+      if (new Date() > rsvpDeadline) {
+        showToast('error', 'RSVP submissions are now closed. Thank you!');
+        return;
+      }
       if (!form.reportValidity()) return;
 
       var data = new FormData(form);

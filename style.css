@@ -1520,7 +1520,7 @@ textarea:focus-visible {
 
 .sponsor-palettes {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 13px;
   width: 100%;
   max-width: 900px;
@@ -1528,6 +1528,7 @@ textarea:focus-visible {
 }
 
 .palette-block {
+  width: 100%;
   padding: 16px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.5);
