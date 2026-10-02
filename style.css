@@ -685,7 +685,7 @@ textarea:focus-visible {
   color: #fff; /* the global h1-h4 rule sets a dark color; this section needs it white */
   text-shadow: 0 4px 30px rgba(0,0,0,0.35);
 }
-.hero-amp { font-family: var(--font-script); color: var(--gold); font-size: 0.6em; }
+.hero-amp { font-family: var(--font-script); color: var(--champagne); font-size: 0.6em; }
 .hero-date {
   margin-top: var(--space-sm);
   font-size: var(--hero-subtitle);
@@ -920,8 +920,9 @@ textarea:focus-visible {
    14. GALLERY + LIGHTBOX
 -------------------------------------------------------------------------- */
 .gallery-grid {
-  columns: 1;
-  column-gap: var(--space-sm);
+  columns: 3;
+  column-gap: var(--space-xs);
+  
 }
 .gallery-item { break-inside: avoid; margin-bottom: var(--space-sm); }
 .gallery-trigger {
@@ -1094,13 +1095,14 @@ textarea:focus-visible {
 .venue-card-img { height: 220px; overflow: hidden; }
 .venue-card-img img { width: 100%; height: 100%; object-fit: cover; }
 .venue-card-body { padding: var(--space-md); }
-.venue-card-body h3 { font-size: 1.7rem; margin-bottom: 0.8rem; }
+.venue-card-body h3 { font-size: 1.7rem; margin-bottom: 0.8rem; font-weight:bolder}
 .venue-row {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   font-size: 1.15rem;
   margin-bottom: 0.4rem;
+  font-weight:bolder;
 }
 .venue-address {
   color: var(--color-text-soft);
@@ -1127,6 +1129,7 @@ textarea:focus-visible {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   color: var(--color-text);
+  font-weight: bolder;
 }
 .faq-icon {
   flex-shrink: 0;
@@ -1146,7 +1149,7 @@ textarea:focus-visible {
   font-size: var(--body);
   line-height: 1.7;
   padding-bottom: 1.3rem;
-  max-width: 60ch;
+  
 }
 
 /* --------------------------------------------------------------------------
@@ -1497,4 +1500,38 @@ textarea:focus-visible {
 
 .padding-bottom-20{
   padding-bottom: 20px;
+}
+
+.qr-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;
+    margin-top:16px;
+}
+.qr-item{ display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; padding-bottom: 20px; }
+.qr-item img{
+  width:100%; aspect-ratio:1/1; object-fit:contain;
+  background:#fff; border:1px solid rgba(79,111,82,.15); border-radius:6px;
+  padding:6px;
+}
+.qr-item span{
+  font-size:.68rem; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--autumn-rust); opacity:.85;
+}
+
+@media (max-width: 768px) {
+  .countdown-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .quote-bg img{
+    object-fit:contain;
+  }
+  .quote-section{
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    min-height: 30vh;
+  }
+  .quote-content cite{
+    margin-top:80px;
+  }
 }

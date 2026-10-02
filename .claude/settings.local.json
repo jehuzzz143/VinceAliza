@@ -45,7 +45,10 @@
       "Bash(cat)",
       "Bash(node /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/verify2.js)",
       "Bash(node /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/verify4.js)",
-      "Bash(rm -f /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/*.png /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/shot*.js /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/verify*.js /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/package*.json)"
+      "Bash(rm -f /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/*.png /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/shot*.js /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/verify*.js /c/Users/jehuz/AppData/Local/Temp/claude/d--Projects-AlizaVince-VinceAliza/7c7a0ff0-9c60-44c4-a821-50efa3ad3904/scratchpad/package*.json)",
+      "Bash(command -v gh)",
+      "Bash(gh auth *)",
+      "Bash(git config *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\jehuz\\AppData\\Local\\Temp\\claude\\d--Projects-AlizaVince-VinceAliza\\7c7a0ff0-9c60-44c4-a821-50efa3ad3904\\scratchpad"

@@ -63,7 +63,7 @@
   =========================================================== -->
   <div id="invitation-gate" class="invitation-gate" aria-hidden="false">
     <div class="gate-bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?auto=format&fit=crop&w=1600&q=70" alt="" loading="eager">
+      <img src="assets/gallery/95.JPG" alt="" loading="eager">
       <div class="gate-bg-overlay"></div>
       <div class="gate-particles" id="gate-particles" aria-hidden="true"></div>
     </div>
@@ -155,9 +155,13 @@
     ========================================================= -->
     <section id="home" class="hero" aria-label="Welcome">
       <div class="hero-bg" id="hero-bg">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
-             alt="Bride and groom silhouetted in warm golden-hour light, holding a bouquet of flowers"
-             loading="eager">
+        <picture>
+           <!-- Mobile image -->
+          <source media="(max-width: 768px)" srcset="assets/gallery/hero-mobile.JPG">
+          <!-- Desktop image -->
+          <img src="assets/gallery/hero.JPG" loading="eager">
+        </picture>
+        
         <div class="hero-overlay"></div>
       </div>
 
@@ -170,7 +174,7 @@
           <span class="hero-amp">&amp;</span>
           <span class="hero-name">Aliza</span>
         </h1>
-        <p class="hero-date">November 14, 2026 &middot; Binangonan, Philippines</p>
+        <p class="hero-date">November 14, 2026 &middot; Binangonan</p>
        
 
         <div class="countdown-grid hero-countdown reveal" data-reveal="scale" role="timer" aria-live="off" aria-label="Countdown to the wedding">
@@ -218,16 +222,18 @@
             <div class="timeline-card">
               <figure class="timeline-photo">
                 <span class="timeline-tape" aria-hidden="true"></span>
-                <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391?auto=format&fit=crop&w=500&q=75" alt="A charming café-lined street where Vince and Aliza first crossed paths" loading="lazy">
+                <button type="button" class="gallery-trigger" data-full="assets/story/bumble.jpg" >
+                  <img src="assets/story/bumble.jpg" loading="lazy">
+                </button>
+                
               </figure>
               <div class="timeline-content">
-                <span class="timeline-year">2019
+                <span class="timeline-year">2023
                   <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
                 </span>
-                <p class="timeline-script">We met.</p>
-                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> University Library</p>
-                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
-                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                <p class="timeline-script">How We Meet.</p>
+                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Bumble</p>
+                <p class="timeline-detail"> It all started with a simple swipe right on Bumble. What began with a “Hi” and a little curiosity turned into countless conversations, shared memories, and eventually, a love we both knew was meant to be. From a swipe right to forever, we’re grateful that we found each other.
                 </p>
               </div>
             </div>
@@ -237,16 +243,16 @@
             <div class="timeline-card">
               <figure class="timeline-photo">
                 <span class="timeline-tape" aria-hidden="true"></span>
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=75" alt="Latte art in a coffee cup, marking the start of long café conversations" loading="lazy">
+                <button type="button" class="gallery-trigger" data-full="assets/story/Antipolo.jpg" >
+                <img src="assets/story/Antipolo.jpg" alt="Latte art in a coffee cup, marking the start of long café conversations" loading="lazy">
+                </button>
               </figure>
               <div class="timeline-content">
-                <span class="timeline-year">2020
+                <span class="timeline-year">2023
                   <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
                 </span>
-                <p class="timeline-script">Coffee became dinner.</p>
-                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Our favorite café</p>
-                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
-                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                <p class="timeline-script">Our First Date.</p>
+                <p class="timeline-detail"> Our first date was at this very church, and looking back, we can’t help but feel that maybe God was quietly leading us to each other, even before we knew that we were the people we had been waiting for. ❤️
                 </p>
               </div>
             </div>
@@ -256,58 +262,21 @@
             <div class="timeline-card">
               <figure class="timeline-photo">
                 <span class="timeline-tape" aria-hidden="true"></span>
-                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=500&q=75" alt="A lone traveler overlooking a misty mountain valley on a road trip" loading="lazy">
+                <button type="button" class="gallery-trigger" data-full="assets/story/Proposal.jpg" >
+                  <img src="assets/story/Proposal.jpg" alt="A lone traveler overlooking a misty mountain valley on a road trip" loading="lazy">
+                </button>
               </figure>
               <div class="timeline-content">
-                <span class="timeline-year">2021
+                <span class="timeline-year">July 2026
                   <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
                 </span>
-                <p class="timeline-script">Road trips.</p>
-                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Tagaytay &middot; Batangas &middot; La Union</p>
-                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
-                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
+                <p class="timeline-script">The Proposal </p>
+                <p class="timeline-detail"> On my 30th birthday, you gave me the greatest gift of all. You asked me to spend forever with you. ❤️
                 </p>
               </div>
             </div>
           </li>
 
-          <li class="timeline-item reveal" data-reveal="right">
-            <div class="timeline-card">
-              <figure class="timeline-photo">
-                <span class="timeline-tape" aria-hidden="true"></span>
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=75" alt="A cozy modern home surrounded by trees at dusk" loading="lazy">
-              </figure>
-              <div class="timeline-content">
-                <span class="timeline-year">2022
-                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
-                </span>
-                <p class="timeline-script">First home.</p>
-                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Our little safe place</p>
-                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
-                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
-                </p> 
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item reveal" data-reveal="left">
-            <div class="timeline-card">
-              <figure class="timeline-photo">
-                <span class="timeline-tape" aria-hidden="true"></span>
-                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=500&q=75" alt="A candlelit table set for a romantic evening under the stars" loading="lazy">
-              </figure>
-              <div class="timeline-content">
-                <span class="timeline-year">2024
-                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21C12 21 4 14.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 14.5 12 21 12 21Z" stroke="#9E8A5E" stroke-width="1.4" fill="none"/></svg>
-                </span>
-                <p class="timeline-script">She said yes.</p>
-                <p class="timeline-detail"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" stroke="#87986A" stroke-width="1.4" fill="none"/><circle cx="12" cy="10" r="2.4" stroke="#87986A" stroke-width="1.4" fill="none"/></svg> Under the stars</p>
-                <p class="timeline-detail"> It all started with one hello and a smile.It all started with one hello and a smile.
-                  It all started with one helloIt all started with one helloIt all started with one helloIt all started with one hello
-                </p>  
-              </div>
-            </div>
-          </li>
         </ol>
 
         <p class="timeline-closing reveal" data-reveal="up">&ldquo;It's not just the big moments,<br>it's every little thing in between.<br>That's our favorite part.&rdquo;</p>
@@ -319,7 +288,7 @@
     ========================================================= -->
     <section class="quote-section " aria-label="A word about our love">
       <div class="quote-bg  " aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1600&q=70" alt="" loading="lazy">
+        <img src="assets/gallery/story.jpg" alt="" loading="lazy">
         <div class="quote-overlay"></div>
       </div>
       <blockquote class="quote-content reveal" data-reveal="scale">
@@ -340,72 +309,78 @@
         <div class="gallery-grid" id="gallery-grid">
           <!-- Each figure is a lightbox trigger; data-full is the high-res source -->
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1600&q=80" data-caption="Wedding Couple — a joyful walk through falling petals">
-              <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=700&q=75" alt="Bride and groom kissing while walking through a shower of confetti" loading="lazy">
-              <span class="gallery-tag">Wedding Couple</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/1.JPG">
+              <img src="assets/gallery/1.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80" data-caption="Bride — glowing beside the lake at golden hour">
-              <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=700&q=75" alt="Bride and groom embracing beside a forest lake at golden hour" loading="lazy">
-              <span class="gallery-tag">Bride</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/2.JPG" >
+              <img src="assets/gallery/2.JPG" loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1550005809-91ad75fb315f?auto=format&fit=crop&w=1600&q=80" data-caption="Bouquet — soft sage greenery and blush blooms">
-              <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?auto=format&fit=crop&w=700&q=75" alt="Close up of a bridal bouquet with sage greenery and peach roses" loading="lazy">
-              <span class="gallery-tag">Bouquet</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/3.JPG" >
+              <img src="assets/gallery/3.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1600&q=80" data-caption="Nature — a quiet path through the forest canopy">
-              <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=700&q=75" alt="Aerial view of a winding path through a lush green forest canopy" loading="lazy">
-              <span class="gallery-tag">Nature</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/4.JPG" >
+              <img src="assets/gallery/4.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=80" data-caption="Reception — an elegant ballroom set for celebration">
-              <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=700&q=75" alt="Elegant reception ballroom with round tables, chandeliers and gold chairs" loading="lazy">
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/5.JPG" >
+              <img src="assets/gallery/5.JPG"  loading="lazy">
               <span class="gallery-tag">Reception</span>
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=80" data-caption="Ring — two gold bands, promises made">
-              <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=75" alt="Two gold wedding rings resting together on fabric with greenery" loading="lazy">
-              <span class="gallery-tag">Ring</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/6.JPG" >
+              <img src="assets/gallery/6.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1600&q=80" data-caption="Sunset — misty gold over the countryside">
-              <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=700&q=75" alt="Golden sunset light over a misty countryside field" loading="lazy">
-              <span class="gallery-tag">Sunset</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/7.JPG" >
+              <img src="assets/gallery/7.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1600&q=80" data-caption="Flowers — hands, rings and roses entwined">
-              <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=700&q=75" alt="Bride and groom's hands resting on a bouquet of roses, rings visible" loading="lazy">
-              <span class="gallery-tag">Flowers</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/8.JPG" >
+              <img src="assets/gallery/8.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?auto=format&fit=crop&w=1600&q=80" data-caption="Table Setup — candlelight and chandeliers">
-              <img src="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?auto=format&fit=crop&w=700&q=75" alt="Elegant table setting with candles, glassware and chandeliers above" loading="lazy">
-              <span class="gallery-tag">Table Setup</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/9.JPG" >
+              <img src="assets/gallery/9.JPG"  loading="lazy">
             </button>
           </figure>
 
           <figure class="gallery-item reveal" data-reveal="up">
-            <button type="button" class="gallery-trigger" data-full="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1600&q=80" data-caption="Forest Wedding — laughter beneath the trees">
-              <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=700&q=75" alt="Bride and groom laughing together beneath large trees at dusk" loading="lazy">
-              <span class="gallery-tag">Forest Wedding</span>
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/10.JPG" >
+              <img src="assets/gallery/10.JPG" loading="lazy">
+              
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-reveal="up">
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/11.JPG" >
+              <img src="assets/gallery/11.JPG"  loading="lazy">
+              
+            </button>
+          </figure>
+
+          <figure class="gallery-item reveal" data-reveal="up">
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/12.JPG" >
+              <img src="assets/gallery/12.JPG"  loading="lazy">
+              
             </button>
           </figure>
         </div>
@@ -449,12 +424,11 @@
 
         <div class="palette-block reveal" data-reveal="up">
           <ul class="swatch-row">
-            <li><span class="swatch" style="--sw:#E8DDC8"></span>Champagne</li>
-            <li><span class="swatch" style="--sw:#D8CBB8"></span>Beige</li>
-            <li><span class="swatch" style="--sw:#F3F0EA"></span>Cream</li>
+            <li><span class="swatch" style="--sw:#B7825F"></span>Soft Brown</li>
             <li><span class="swatch" style="--sw:#9C8C74"></span>Taupe</li>
             <li><span class="swatch" style="--sw:#BFB08A"></span>Khaki</li>
-            <li><span class="swatch" style="--sw:#E4D2AE"></span>Sand</li>
+            <li><span class="swatch" style="--sw:#391B05"></span>Dark Mocha</li>
+            
           </ul>
         </div>
 
@@ -574,7 +548,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                <p>Yes, both the Diocesan Shrine and Cervo's Event Place have parking available for guests on-site.</p>
+                <p>Yes, both the Diocesan Shrine and Cervo's Event Place have parking available for guests on-site. But slots are limited and available on a first-come, first-served basis. We recommend arriving early to secure a paring slot.</p>
               </div>
             </div>
           </div>
@@ -586,10 +560,55 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                <p>Kindly reply by October 1, 2026, so we can finalize our seating and catering with the venues.</p>
+                <p>Kindly reply by October 17, 2026, so we can finalize our seating and catering with the venues.</p>
               </div>
             </div>
           </div>
+
+          <div class="faq-item reveal" data-reveal="up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can I bring a plus one?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Our hearts would love to include everyone, but we're keeping our celebration intimate. This invitation is just for you</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-reveal="up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What should I give as a gift?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>your presence is the greatest gift we could ask for. If you wish to bless us with a gift, we would be truly grateful for a contribution toward our future together. We kindly request no boxed gifts, but please know that your presence and love mean the most to us.</p>
+                <div class="qr-grid">
+                <div class="qr-item" data-caption="GCash">
+                  <button type="button" class="gallery-trigger" data-full="assets/qr/gcash.jpg" data-caption="Aliza GCash QR code">
+                    <img src="assets/qr/gcash.jpg" alt="Aliza GCash QR code" loading="lazy">
+                    <span>GCash</span>
+                  </button>
+                </div>
+                <div class="qr-item" data-caption="BPI">
+                  <button type="button" class="gallery-trigger" data-full="assets/qr/rcbc.jpg" data-caption="Aliza RCBC QR code">
+                    <img src="assets/qr/rcbc.jpg" alt="Aliza RCBC QR code" loading="lazy">
+                    <span>RCBC</span>
+                  </button>
+                </div>
+                <div class="qr-item" data-caption="GoTyme">
+                  <button type="button" class="gallery-trigger" data-full="assets/qr/gcash2.jpg" data-caption="Vince Gcash QR code">
+                    <img src="assets/qr/gcash2.jpg" alt="Vince Gcash QR code" loading="lazy">
+                    <span>Cash</span>
+                  </button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
