@@ -1520,7 +1520,7 @@ textarea:focus-visible {
 
 .sponsor-palettes {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 13px;
   width: 100%;
   max-width: 900px;
@@ -1607,5 +1607,8 @@ textarea:focus-visible {
   .hero-countdown{
         margin-top: var(--space-xs);
   }
-}
+  .sponsor-palettes {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
+}
