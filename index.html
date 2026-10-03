@@ -372,9 +372,9 @@
             </button>
           </figure>
 
-          <figure class="gallery-item reveal" >
-            <button type="button" class="gallery-trigger" data-full="assets/gallery/11.JPG" >
-              <img src="assets/gallery/11.JPG"  loading="lazy">
+          <figure class="gallery-item reveal" data-reveal="up">
+            <button type="button" class="gallery-trigger" data-full="assets/gallery/111.JPG" >
+              <img src="assets/gallery/111.JPG"  loading="lazy">
             </button>
           </figure> 
 
@@ -685,12 +685,12 @@
         <form id="rsvp-form" class="rsvp-form reveal" data-reveal="up" novalidate>
           <div class="form-row">
             <label for="rsvp-name">Full Name</label>
-            <input type="text" id="rsvp-name" name="name" required autocomplete="name">
+            <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Your Name">
           </div>
 
           <div class="form-row">
             <label for="rsvp-email">Email</label>
-            <input type="email" id="rsvp-email" name="email" required autocomplete="email">
+            <input type="email" id="rsvp-email" name="email" required autocomplete="email" placeholder="Your Email">
           </div>
 
           <div class="form-row">
@@ -704,7 +704,8 @@
 
           <div class="form-row">
             <label for="rsvp-message">Message for the Couple</label>
-            <textarea id="rsvp-message" name="message" rows="4"></textarea>
+            <textarea id="rsvp-message" name="message" rows="4" maxlength="300" placeholder="Leave a note for Vince & Aliza (Optional)"></textarea>
+            <span id="message-count">0 / 300</span>
           </div>
 
           <button type="submit" class="btn btn-primary rsvp-submit" id="rsvp-submit">
@@ -712,6 +713,11 @@
             <span class="btn-spinner" aria-hidden="true"></span>
           </button>
         </form>
+
+        <div class="rsvp-note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-6.5-4.4-9.3-8.8C.6 8.6 2 4.5 6 4c2-.25 3.6.7 6 3 2.4-2.3 4-3.25 6-3 4 .5 5.4 4.6 3.3 8.2C18.5 16.6 12 21 12 21z"/></svg>
+          <p>If we don't hear from you, we'll presume you can't make it — so please RSVP as soon as you can!</p>
+        </div>
       </div>
 
       <!-- ====================================================

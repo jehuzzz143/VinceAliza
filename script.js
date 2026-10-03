@@ -740,3 +740,11 @@
     });
   });
 })();
+
+
+const message = document.getElementById("rsvp-message");
+const messageCount = document.getElementById("message-count");
+
+message.addEventListener("input", function () {
+  messageCount.textContent = `${message.value.length} / 300`;
+});
