@@ -1650,3 +1650,47 @@ textarea:focus-visible {
     filter: none;
   }
 }
+
+.entourage-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 1.8rem;
+}
+
+.entourage-heading-text {
+  margin: 0;
+  font-family: var(--font-nav);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: #71805a; /* sage green */
+  text-align: center;
+  white-space: nowrap;
+}
+
+.entourage-heading-line {
+  width: 55px;
+  height: 1px;
+  background: #71805a;
+  opacity: 0.45;
+}
+
+@media (max-width: 480px) {
+  .entourage-heading {
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .entourage-heading-text {
+    font-size: 1 rem;
+    letter-spacing: 0.14em;
+  }
+
+  .entourage-heading-line {
+    width: 25px;
+  }
+}
