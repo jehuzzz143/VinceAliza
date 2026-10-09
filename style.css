@@ -1256,7 +1256,7 @@ textarea:focus-visible {
   gap: 1.25rem;
   width: max-content;
   padding: 0.5rem 0 1.5rem;
-  animation: wishes-scroll 100s linear infinite;
+  animation: wishes-scroll 300s linear infinite;
 }
 /* Pause the drift so a guest can actually read a card. */
 .wishes-marquee:hover .wishes-track,
