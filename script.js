@@ -543,7 +543,7 @@
     var submitBtn = document.getElementById('rsvp-submit');
     if (!form) return;
 
-    var rsvpDeadline = new Date('2026-10-17T23:59:59+08:00');
+    var rsvpDeadline = new Date('2026-10-25T23:59:59+08:00');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
